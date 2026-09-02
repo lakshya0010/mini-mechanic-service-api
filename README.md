@@ -56,8 +56,8 @@ Relationship: **Mechanic (1) → ServiceRequest (many)**.
 ### 1. Clone and create a virtual environment
 
 ```bash
-git clone <your-repo-url>
-cd mechanic_service
+git clone https://github.com/lakshya0010/mini-mechanic-service-api
+cd mini-mechanic-service-api
 python -m venv venv
 source venv/bin/activate      # Windows: venv\Scripts\activate
 pip install -r requirements.txt
@@ -68,9 +68,11 @@ pip install -r requirements.txt
 Create a database and user (adjust as needed):
 
 ```sql
-CREATE DATABASE mechanic_service_db;
-CREATE USER postgres WITH PASSWORD 'postgres';
-GRANT ALL PRIVILEGES ON DATABASE mechanic_service_db TO postgres;
+CREATE DATABASE mechanic_service;
+
+ALTER USER postgres WITH PASSWORD 'admin';
+
+GRANT ALL PRIVILEGES ON DATABASE mechanic_service TO postgres;
 ```
 
 ### 3. Configure environment variables

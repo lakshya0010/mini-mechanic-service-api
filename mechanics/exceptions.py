@@ -8,11 +8,6 @@ logger = logging.getLogger("mechanics")
 
 
 def custom_exception_handler(exc, context):
-    """
-    Wraps DRF's default handler to always return a consistent shape:
-    { "error": true, "message": "...", "details": {...} }
-    and logs unexpected (500-level) errors.
-    """
     response = exception_handler(exc, context)
 
     if response is not None:
